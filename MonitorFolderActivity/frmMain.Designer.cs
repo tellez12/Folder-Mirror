@@ -35,11 +35,13 @@ namespace MonitorFolderActivity
             this.lblActivity = new System.Windows.Forms.Label();
             this.txtTargetPath = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.ddConfigurations = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnStart_Stop
             // 
-            this.btnStart_Stop.Location = new System.Drawing.Point(439, 23);
+            this.btnStart_Stop.Location = new System.Drawing.Point(439, 67);
             this.btnStart_Stop.Name = "btnStart_Stop";
             this.btnStart_Stop.Size = new System.Drawing.Size(75, 23);
             this.btnStart_Stop.TabIndex = 0;
@@ -49,7 +51,7 @@ namespace MonitorFolderActivity
             // 
             // txtActivity
             // 
-            this.txtActivity.Location = new System.Drawing.Point(12, 110);
+            this.txtActivity.Location = new System.Drawing.Point(12, 170);
             this.txtActivity.Multiline = true;
             this.txtActivity.Name = "txtActivity";
             this.txtActivity.Size = new System.Drawing.Size(502, 142);
@@ -57,7 +59,7 @@ namespace MonitorFolderActivity
             // 
             // txtFolderPath
             // 
-            this.txtFolderPath.Location = new System.Drawing.Point(12, 25);
+            this.txtFolderPath.Location = new System.Drawing.Point(12, 69);
             this.txtFolderPath.Name = "txtFolderPath";
             this.txtFolderPath.Size = new System.Drawing.Size(421, 20);
             this.txtFolderPath.TabIndex = 3;
@@ -65,7 +67,7 @@ namespace MonitorFolderActivity
             // lblToMonitor
             // 
             this.lblToMonitor.AutoSize = true;
-            this.lblToMonitor.Location = new System.Drawing.Point(12, 9);
+            this.lblToMonitor.Location = new System.Drawing.Point(12, 53);
             this.lblToMonitor.Name = "lblToMonitor";
             this.lblToMonitor.Size = new System.Drawing.Size(88, 13);
             this.lblToMonitor.TabIndex = 5;
@@ -74,7 +76,7 @@ namespace MonitorFolderActivity
             // lblActivity
             // 
             this.lblActivity.AutoSize = true;
-            this.lblActivity.Location = new System.Drawing.Point(12, 94);
+            this.lblActivity.Location = new System.Drawing.Point(12, 138);
             this.lblActivity.Name = "lblActivity";
             this.lblActivity.Size = new System.Drawing.Size(41, 13);
             this.lblActivity.TabIndex = 6;
@@ -82,7 +84,7 @@ namespace MonitorFolderActivity
             // 
             // txtTargetPath
             // 
-            this.txtTargetPath.Location = new System.Drawing.Point(12, 62);
+            this.txtTargetPath.Location = new System.Drawing.Point(12, 106);
             this.txtTargetPath.Name = "txtTargetPath";
             this.txtTargetPath.Size = new System.Drawing.Size(421, 20);
             this.txtTargetPath.TabIndex = 7;
@@ -90,17 +92,37 @@ namespace MonitorFolderActivity
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 48);
+            this.label1.Location = new System.Drawing.Point(12, 92);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "Target folder:";
             // 
+            // ddConfigurations
+            // 
+            this.ddConfigurations.FormattingEnabled = true;
+            this.ddConfigurations.Location = new System.Drawing.Point(12, 28);
+            this.ddConfigurations.Name = "ddConfigurations";
+            this.ddConfigurations.Size = new System.Drawing.Size(121, 21);
+            this.ddConfigurations.TabIndex = 9;
+            this.ddConfigurations.SelectedIndexChanged += new System.EventHandler(this.ddConfigurations_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Configuration:";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 264);
+            this.ClientSize = new System.Drawing.Size(601, 324);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.ddConfigurations);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTargetPath);
             this.Controls.Add(this.lblActivity);
@@ -124,6 +146,8 @@ namespace MonitorFolderActivity
         private System.Windows.Forms.Label lblActivity;
         private System.Windows.Forms.TextBox txtTargetPath;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox ddConfigurations;
+        private System.Windows.Forms.Label label2;
     }
 }
 

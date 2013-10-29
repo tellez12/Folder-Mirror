@@ -18,6 +18,7 @@ using System.IO;
 // be raised from the monitor is comming from a different
 // thread that will run on your code.
 using System.Threading;
+using System.Collections.Generic;
 
 namespace MonitorFolderActivity
 {
@@ -29,6 +30,8 @@ namespace MonitorFolderActivity
         public frmMain()
         {
             InitializeComponent();
+            ddConfigurations.DataSource = Configuration.Configurations;            
+            ddConfigurations.DisplayMember = "Name";
         }
         private void abortAcitivityMonitoring()
         {
@@ -188,5 +191,24 @@ namespace MonitorFolderActivity
                 stopActivityMonitoring();
             }
         }
+
+        private void ddConfigurations_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddConfigurations.SelectedValue != null)
+            {
+                Configuration current = (Configuration)ddConfigurations.SelectedValue;
+                txtFolderPath.Text = current.MonitoredFolder;
+                txtTargetPath.Text = current.TargetFolder;
+            }
+        }
+
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    List<Configuration> c = new List<Configuration>();
+        //    c.Add(new Configuration {Name=@"Jess",MonitoredFolder= @"C:\Users\ltellez\Pictures\Photo Stream\My Photo Stream", TargetFolder=@"c:\Jess" });
+        //    c.Add(new Configuration { Name = @"Ross", MonitoredFolder = @"C:\Users\ltellez\Pictures\Photo Stream\My Photo Stream", TargetFolder = @"c:\Ross" });
+        //    Configuration.Configurations = c;
+        //    Configuration.SaveConfiguration();
+        //}
     }
 }
