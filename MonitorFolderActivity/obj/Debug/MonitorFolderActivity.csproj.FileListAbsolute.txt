@@ -7,3 +7,5 @@ F:\Archive\Experimentation\Tracking\Crysis 2\DirectoryWatcher\MonitorFolderActiv
 F:\Archive\Experimentation\Tracking\Crysis 2\DirectoryWatcher\MonitorFolderActivity\obj\Debug\ResGen.write.1.tlog
 F:\Archive\Experimentation\Tracking\Crysis 2\DirectoryWatcher\MonitorFolderActivity\obj\Debug\MonitorFolderActivity.exe
 F:\Archive\Experimentation\Tracking\Crysis 2\DirectoryWatcher\MonitorFolderActivity\obj\Debug\MonitorFolderActivity.pdb
+C:\Users\ltellez\projects\FolderMirror\Folder-Mirror\MonitorFolderActivity\obj\Debug\MonitorFolderActivity.exe
+C:\Users\ltellez\projects\FolderMirror\Folder-Mirror\MonitorFolderActivity\obj\Debug\MonitorFolderActivity.pdb
