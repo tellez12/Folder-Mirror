@@ -32,6 +32,7 @@ namespace MonitorFolderActivity
             InitializeComponent();
             ddConfigurations.DataSource = Configuration.Configurations;            
             ddConfigurations.DisplayMember = "Name";
+            
         }
         private void abortAcitivityMonitoring()
         {
@@ -124,17 +125,23 @@ namespace MonitorFolderActivity
         private delegate void CopyFile(string fileName);
         private void TS_CopyFile(string fileName)
         {
-            if (this.InvokeRequired)
+            try
             {
-                CopyFile del = new CopyFile(TS_CopyFile);
-                Invoke(del, fileName);
+                if (this.InvokeRequired)
+                {
+                    CopyFile del = new CopyFile(TS_CopyFile);
+                    Invoke(del, fileName);
+                }
+                else
+                {
+                    File.Copy(txtFolderPath.Text + "\\" + fileName, txtTargetPath.Text + "\\" + fileName, true);
+                    string text = txtFolderPath.Text + "\\" + fileName + " copied to " + txtTargetPath.Text + "\\" + fileName + "\r\n";
+                    txtActivity.Text += text;
+                }
             }
-            else
-            {
-                File.Copy(txtFolderPath.Text + "\\" + fileName, txtTargetPath.Text + "\\" + fileName, true);
-                string text = txtFolderPath.Text + "\\" + fileName + " copied to " + txtTargetPath.Text + "\\" + fileName + "\r\n";
-                txtActivity.Text += text;
-            }
+            catch { }
+
+            
             
             
         }
@@ -201,14 +208,6 @@ namespace MonitorFolderActivity
                 txtTargetPath.Text = current.TargetFolder;
             }
         }
-
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    List<Configuration> c = new List<Configuration>();
-        //    c.Add(new Configuration {Name=@"Jess",MonitoredFolder= @"C:\Users\ltellez\Pictures\Photo Stream\My Photo Stream", TargetFolder=@"c:\Jess" });
-        //    c.Add(new Configuration { Name = @"Ross", MonitoredFolder = @"C:\Users\ltellez\Pictures\Photo Stream\My Photo Stream", TargetFolder = @"c:\Ross" });
-        //    Configuration.Configurations = c;
-        //    Configuration.SaveConfiguration();
-        //}
+ 
     }
 }

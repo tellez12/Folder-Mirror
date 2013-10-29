@@ -38,12 +38,14 @@ namespace MonitorFolderActivity
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Configuration>));
                 StreamReader reader = new StreamReader("configurations.xml");
                 ConfList = (List<Configuration>)serializer.Deserialize(reader);
-                reader.Close();
+                reader.Close();      
 
             }
             catch (Exception)
             {
                 ConfList = new List<Configuration>();
+                ConfList.Add(new Configuration { Name = "", MonitoredFolder = "", TargetFolder = "" });            
+                SaveConfiguration();
               
             }
             
